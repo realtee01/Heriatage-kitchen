@@ -1,4 +1,5 @@
-import { ChefHat, Instagram, Twitter, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Twitter, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { Logo } from './Logo';
 
 export function Footer() {
   return (
@@ -8,12 +9,7 @@ export function Footer() {
           
           {/* Brand */}
           <div className="col-span-1 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <ChefHat className="h-8 w-8 text-amber-500" />
-              <span className="text-2xl font-serif font-bold text-white tracking-tight">
-                Heritage <span className="text-amber-500">Kitchens</span>
-              </span>
-            </div>
+            <Logo className="mb-6" />
             <p className="text-sm leading-relaxed mb-6">
               The Soul of Lagos, Elevated. Authentic Nigerian flavors crafted with passion and served in a premium setting.
             </p>

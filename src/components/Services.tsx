@@ -1,8 +1,9 @@
+import { ElementType } from 'react';
 import { motion } from 'motion/react';
 import { Utensils, Truck, ChefHat, Calendar } from 'lucide-react';
 import { restaurantData } from '../data';
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   Utensils,
   Truck,
   ChefHat,

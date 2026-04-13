@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChefHat } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { Logo } from './Logo';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,12 +33,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <ChefHat className="h-8 w-8 text-amber-500" />
-            <span className="text-2xl font-serif font-bold text-white tracking-tight">
-              Heritage <span className="text-amber-500">Kitchens</span>
-            </span>
-          </div>
+          <Logo />
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">

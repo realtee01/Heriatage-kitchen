@@ -95,7 +95,8 @@ export const restaurantData = {
         name: "Rice Specials",
         items: [
           { id: "native-rice", name: "Village Native Rice", description: "Palm oil rice infused with locust beans, smoked fish, and scent leaves.", price: 13500, tags: ["traditional"] },
-          { id: "fried-rice", name: "Special Fried Rice", description: "Nigerian-style fried rice with diced liver, prawns, and mixed vegetables.", price: 12000, tags: [] }
+          { id: "fried-rice", name: "Special Fried Rice", description: "Nigerian-style fried rice with diced liver, prawns, and mixed vegetables.", price: 12000, tags: [] },
+          { id: "chinese-rice", name: "Heritage Chinese Rice", description: "Stir-fried basmati rice with oriental spices, colorful vegetables, and shredded chicken.", price: 15000, tags: ["fusion"] }
         ]
       },
       {
