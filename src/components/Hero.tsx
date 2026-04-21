@@ -5,17 +5,15 @@ import { restaurantData } from '../data';
 export function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=1920&auto=format,compress&fit=crop&fmt=webp")',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-        }}
-      >
-        <div className="absolute inset-0 bg-zinc-950/70" />
-      </div>
+      {/* Background Image Optimized for LCP */}
+      <img
+        src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=1920&auto=format,compress&fit=crop&fmt=webp"
+        alt="Premium dining ambiance at Heritage Kitchens"
+        fetchPriority="high"
+        decoding="sync"
+        className="absolute inset-0 z-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-zinc-950/70 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
         <motion.div
