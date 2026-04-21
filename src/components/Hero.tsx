@@ -5,9 +5,15 @@ import { restaurantData } from '../data';
 export function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Optimized for LCP */}
+      {/* Background Image Optimized for LCP with Responsive Sizing */}
       <img
-        src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=1920&auto=format,compress&fit=crop&fmt=webp"
+        src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=60&w=1920&auto=format,compress&fit=crop&fmt=webp"
+        srcSet={`
+          https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=60&w=640&auto=format,compress&fit=crop&fmt=webp 640w,
+          https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=60&w=1280&auto=format,compress&fit=crop&fmt=webp 1280w,
+          https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=60&w=1920&auto=format,compress&fit=crop&fmt=webp 1920w
+        `}
+        sizes="100vw"
         alt="Premium dining ambiance at Heritage Kitchens"
         fetchPriority="high"
         decoding="sync"
