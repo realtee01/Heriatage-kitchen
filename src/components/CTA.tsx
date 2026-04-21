@@ -33,24 +33,24 @@ export function CTA() {
           <form className="bg-zinc-900/50 backdrop-blur-md p-8 rounded-2xl border border-zinc-800 max-w-3xl mx-auto text-left" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">Date</label>
-                <input type="date" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
+                <label htmlFor="res-date" className="block text-sm font-medium text-zinc-400 mb-2">Date</label>
+                <input id="res-date" type="date" required className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">Time</label>
-                <input type="time" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
+                <label htmlFor="res-time" className="block text-sm font-medium text-zinc-400 mb-2">Time</label>
+                <input id="res-time" type="time" required className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">Guests</label>
-                <select className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                <label htmlFor="res-guests" className="block text-sm font-medium text-zinc-400 mb-2">Guests</label>
+                <select id="res-guests" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
                   {[1,2,3,4,5,6,7,8,"9+"].map(num => (
                     <option key={num} value={num}>{num} {num === 1 ? 'Person' : 'People'}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">Name</label>
-                <input type="text" placeholder="Your full name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
+                <label htmlFor="res-name" className="block text-sm font-medium text-zinc-400 mb-2">Name</label>
+                <input id="res-name" type="text" required placeholder="Your full name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
               </div>
             </div>
             <button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg px-4 py-4 transition-colors uppercase tracking-wider">

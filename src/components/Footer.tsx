@@ -14,13 +14,13 @@ export function Footer() {
               The Soul of Lagos, Elevated. Authentic Nigerian flavors crafted with passion and served in a premium setting.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
+              <a href="#" aria-label="Visit our Instagram" rel="noopener noreferrer" target="_blank" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
+              <a href="#" aria-label="Visit our Twitter" rel="noopener noreferrer" target="_blank" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
+              <a href="#" aria-label="Visit our Facebook" rel="noopener noreferrer" target="_blank" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
@@ -69,10 +69,13 @@ export function Footer() {
             <h4 className="text-white font-bold uppercase tracking-wider mb-6">Newsletter</h4>
             <p className="text-sm mb-4">Subscribe to receive updates on special menus and exclusive events.</p>
             <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <input 
+                id="newsletter-email"
                 type="email" 
                 placeholder="Your email address" 
                 className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
+                required
               />
               <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg px-4 py-3 text-sm transition-colors uppercase tracking-wider">
                 Subscribe

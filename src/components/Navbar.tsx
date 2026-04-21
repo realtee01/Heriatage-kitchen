@@ -57,8 +57,10 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-zinc-300 hover:text-white"
+              className="text-zinc-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-500 rounded p-1"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

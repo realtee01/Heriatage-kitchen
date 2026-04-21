@@ -20,13 +20,14 @@ export function Location() {
           className="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl relative grayscale hover:grayscale-0 transition-all duration-700"
         >
           <iframe
-            title="Heritage Kitchens Location"
+            title="Heritage Kitchens Location in Lekki Phase 1"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
+            sandbox="allow-scripts allow-same-origin allow-popups"
             src="https://maps.google.com/maps?q=6.4474,3.4723&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="absolute inset-0"
           ></iframe>

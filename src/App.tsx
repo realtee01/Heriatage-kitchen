@@ -3,16 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Suspense, lazy } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Featured } from './components/Featured';
-import { Menu } from './components/Menu';
-import { Services } from './components/Services';
-import { Testimonials } from './components/Testimonials';
-import { CTA } from './components/CTA';
-import { Location } from './components/Location';
-import { Footer } from './components/Footer';
+
+// Lazy load below-the-fold components
+const About = lazy(() => import('./components/About').then(m => ({ default: m.About })));
+const Featured = lazy(() => import('./components/Featured').then(m => ({ default: m.Featured })));
+const Menu = lazy(() => import('./components/Menu').then(m => ({ default: m.Menu })));
+const Services = lazy(() => import('./components/Services').then(m => ({ default: m.Services })));
+const Testimonials = lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })));
+const CTA = lazy(() => import('./components/CTA').then(m => ({ default: m.CTA })));
+const Location = lazy(() => import('./components/Location').then(m => ({ default: m.Location })));
+const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
 export default function App() {
   return (
@@ -20,15 +23,19 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Featured />
-        <Menu />
-        <Services />
-        <Testimonials />
-        <CTA />
-        <Location />
+        <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center bg-zinc-950"><span className="text-amber-500 font-serif">Loading...</span></div>}>
+          <About />
+          <Featured />
+          <Menu />
+          <Services />
+          <Testimonials />
+          <CTA />
+          <Location />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

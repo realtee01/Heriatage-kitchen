@@ -21,8 +21,12 @@ export function About() {
               {restaurantData.brand.story}
             </p>
             <img 
-              src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&q=80&w=800" 
-              alt="Chef cooking" 
+              src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format,compress&q=80&w=800&fmt=webp" 
+              alt="Chef cooking in Heritage Kitchens" 
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="600"
               className="rounded-lg shadow-2xl w-full h-64 object-cover"
             />
           </motion.div>
@@ -35,13 +39,21 @@ export function About() {
             className="grid grid-cols-2 gap-4"
           >
             <img 
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=600" 
-              alt="Restaurant interior" 
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format,compress&q=80&w=600&fmt=webp" 
+              alt="Elegant restaurant interior at Heritage Kitchens" 
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="800"
               className="rounded-lg shadow-2xl w-full h-80 object-cover mt-12"
             />
             <img 
-              src="https://plus.unsplash.com/premium_photo-1742596374443-ff45a088c60a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Plated dish" 
+              src="https://plus.unsplash.com/premium_photo-1742596374443-ff45a088c60a?q=80&w=870&auto=format,compress&fit=crop&fmt=webp" 
+              alt="Beautifully plated Nigerian dish" 
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="800"
               className="rounded-lg shadow-2xl w-full h-80 object-cover"
             />
           </motion.div>

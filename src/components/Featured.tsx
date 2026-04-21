@@ -23,8 +23,12 @@ export function Featured() {
               <div className="relative overflow-hidden rounded-xl mb-6">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
                 <img 
-                  src={dish.image} 
-                  alt={dish.name} 
+                  src={`${dish.image}&fmt=webp&auto=format,compress`} 
+                  alt={`${dish.name} - Signature Dish`} 
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="600"
                   className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4 z-20 flex gap-2">
