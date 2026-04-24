@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export function CTA() {
   return (
@@ -6,7 +7,7 @@ export function CTA() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2000")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format,compress&q=80&w=2000")',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed'
@@ -30,35 +31,23 @@ export function CTA() {
             Whether it's an intimate dinner or a grand celebration, we look forward to hosting you at Heritage Kitchens.
           </p>
           
-          <form className="bg-zinc-900/50 backdrop-blur-md p-8 rounded-2xl border border-zinc-800 max-w-3xl mx-auto text-left" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="res-date" className="block text-sm font-medium text-zinc-400 mb-2">Date</label>
-                <input id="res-date" type="date" required className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
-              </div>
-              <div>
-                <label htmlFor="res-time" className="block text-sm font-medium text-zinc-400 mb-2">Time</label>
-                <input id="res-time" type="time" required className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
-              </div>
-              <div>
-                <label htmlFor="res-guests" className="block text-sm font-medium text-zinc-400 mb-2">Guests</label>
-                <select id="res-guests" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
-                  {[1,2,3,4,5,6,7,8,"9+"].map(num => (
-                    <option key={num} value={num}>{num} {num === 1 ? 'Person' : 'People'}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="res-name" className="block text-sm font-medium text-zinc-400 mb-2">Name</label>
-                <input id="res-name" type="text" required placeholder="Your full name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
-              </div>
-            </div>
-            <button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg px-4 py-4 transition-colors uppercase tracking-wider">
-              Confirm Reservation
-            </button>
-          </form>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/reservation"
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg px-8 py-4 transition-colors uppercase tracking-wider w-full sm:w-auto"
+            >
+              Book a Table
+            </Link>
+            <Link 
+              to="/order"
+              className="bg-zinc-900/50 hover:bg-white border border-zinc-700 hover:border-white text-white hover:text-zinc-950 font-bold rounded-lg px-8 py-4 transition-all uppercase tracking-wider w-full sm:w-auto backdrop-blur-sm"
+            >
+              Order Online
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
+

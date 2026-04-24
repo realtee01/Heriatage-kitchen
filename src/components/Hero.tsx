@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { restaurantData } from '../data';
 
 export function Hero() {
@@ -36,18 +37,18 @@ export function Hero() {
             Experience authentic Nigerian culinary traditions reimagined for the modern palate in the heart of Lekki.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#reservations"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-full transition-colors uppercase tracking-wider"
+          <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/reservation"
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-full transition-colors uppercase tracking-wider"
             >
               Reserve a Table
-            </a>
+            </Link>
             <a
               href="#menu"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-zinc-500 hover:border-white hover:bg-white/10 rounded-full transition-colors uppercase tracking-wider"
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white border border-zinc-500 hover:border-white hover:bg-white/10 rounded-full transition-colors uppercase tracking-wider"
             >
-              View Menu <ArrowRight className="ml-2 h-5 w-5" />
+              View Menu <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </div>
         </motion.div>

@@ -3,9 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Suspense, lazy, useEffect, useState, useRef, ReactNode } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 // Lazy load below-the-fold components
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })));
@@ -17,39 +30,40 @@ const CTA = lazy(() => import('./components/CTA').then(m => ({ default: m.CTA })
 const Location = lazy(() => import('./components/Location').then(m => ({ default: m.Location })));
 const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
-function DeferredSection({ children, minHeight = "10vh" }: { children: ReactNode, minHeight?: string }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+const ReservationPage = lazy(() => import('./pages/ReservationPage'));
+const OrderPage = lazy(() => import('./pages/OrderPage'));
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.disconnect();
-      }
-    }, { rootMargin: '400px' }); // Load heavily before they scroll to it
-    
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return <div ref={ref} style={{ minHeight: isVisible ? 'auto' : minHeight }}>{isVisible && children}</div>;
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Suspense fallback={<div className="h-screen bg-zinc-950" />}>
+        <About />
+        <Featured />
+        <Menu />
+        <Services />
+        <Testimonials />
+        <CTA />
+        <Location />
+      </Suspense>
+    </>
+  );
 }
 
 export default function App() {
+  const location = useLocation();
+  
   return (
-    <div className="min-h-screen bg-zinc-950 font-sans selection:bg-amber-500/30">
+    <div className="min-h-screen flex flex-col bg-zinc-950 font-sans selection:bg-amber-500/30">
+      <ScrollToTop />
       <Navbar />
-      <main>
-        <Hero />
-        <Suspense fallback={<div className="h-[10vh]" />}>
-          <DeferredSection minHeight="80vh"><About /></DeferredSection>
-          <DeferredSection minHeight="80vh"><Featured /></DeferredSection>
-          <DeferredSection minHeight="100vh"><Menu /></DeferredSection>
-          <DeferredSection minHeight="50vh"><Services /></DeferredSection>
-          <DeferredSection minHeight="50vh"><Testimonials /></DeferredSection>
-          <DeferredSection minHeight="80vh"><CTA /></DeferredSection>
-          <DeferredSection minHeight="50vh"><Location /></DeferredSection>
+      <main className="flex-1">
+        <Suspense fallback={<div className="h-screen bg-zinc-950 flex items-center justify-center"><span className="text-amber-500 font-serif text-xl animate-pulse">Loading Heritage Kitchens...</span></div>}>
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/reservation" element={<ReservationPage />} />
+            <Route path="/order" element={<OrderPage />} />
+          </Routes>
         </Suspense>
       </main>
       <Suspense fallback={null}>
@@ -58,3 +72,4 @@ export default function App() {
     </div>
   );
 }
+
