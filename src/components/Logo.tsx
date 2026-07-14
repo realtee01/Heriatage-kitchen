@@ -7,45 +7,25 @@ interface LogoProps {
 
 export function Logo({ className, iconOnly = false }: LogoProps) {
   return (
-    <div className={cn("flex items-center gap-3 group cursor-pointer", className)}>
+    <div className={cn("flex items-center gap-4 group cursor-pointer", className)}>
       <div className="relative flex items-center justify-center">
-        {/* Outer Ring */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-amber-600 to-amber-300 rounded-lg rotate-45 group-hover:rotate-90 transition-transform duration-500 opacity-20" />
-        
-        {/* Main Icon Container */}
-        <div className="relative w-10 h-10 bg-zinc-900 border border-amber-500/30 rounded-lg flex items-center justify-center overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent" />
+        {/* Sleek Monogram Container */}
+        <div className="relative w-11 h-11 rounded-full border border-amber-600/30 bg-zinc-950/40 backdrop-blur-md flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(217,119,6,0.1)] group-hover:border-amber-500/60 group-hover:shadow-[0_0_20px_rgba(217,119,6,0.2)] transition-all duration-700 ease-out">
+          {/* Subtle inner gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent" />
           
-          {/* Stylized 'H' with Chef Hat */}
-          <svg 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            className="w-6 h-6 text-amber-500 transform group-hover:scale-110 transition-transform duration-500"
-          >
-            {/* The 'H' Base */}
-            <path d="M7 10v10M17 10v10M7 15h10" />
-            
-            {/* The Chef Hat on top */}
-            <path d="M8 10c0-2.5 1.5-4.5 4-4.5s4 2 4 4.5" />
-            <path d="M8 10h8" />
-            <path d="M10 5.5c0-1 1-2 2-2s2 1 2 2" className="opacity-60" />
-          </svg>
-          
-          {/* Shine Effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          <span className="font-serif text-lg tracking-tighter text-white relative z-10">
+            H<span className="italic text-amber-500">K</span>
+          </span>
         </div>
       </div>
 
       {!iconOnly && (
-        <div className="flex flex-col -space-y-1">
-          <span className="text-xl font-serif font-bold text-white tracking-tight uppercase">
+        <div className="flex flex-col -space-y-0.5 mt-0.5">
+          <span className="text-[1.15rem] font-serif font-medium text-zinc-50 tracking-[0.15em] uppercase leading-none">
             Heritage
           </span>
-          <span className="text-[10px] font-sans font-bold text-amber-500 tracking-[0.3em] uppercase opacity-80">
+          <span className="text-[0.6rem] font-sans font-medium text-amber-500/80 tracking-[0.4em] uppercase leading-none pl-0.5">
             Kitchens
           </span>
         </div>

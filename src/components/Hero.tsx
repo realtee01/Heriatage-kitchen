@@ -28,9 +28,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white mb-6 tracking-wide">
             The Soul of Lagos, <br />
-            <span className="text-amber-500 italic">Elevated.</span>
+            <span className="text-amber-500 italic font-light tracking-normal">Elevated.</span>
           </h1>
           
           <p className="mt-6 text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto font-light leading-relaxed">

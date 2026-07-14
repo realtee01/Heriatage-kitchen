@@ -29,10 +29,10 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300',
+        'fixed top-0 w-full z-50 transition-all duration-500',
         isScrolled || !isHome
-          ? 'bg-zinc-950/90 backdrop-blur-md py-4 shadow-lg'
-          : 'bg-transparent py-6'
+          ? 'bg-zinc-950/80 backdrop-blur-xl border-b border-white/5 shadow-2xl py-4'
+          : 'bg-gradient-to-b from-zinc-950/80 to-transparent py-6'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export function Navbar() {
             ))}
             <Link
               to="/reservation"
-              className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors uppercase tracking-wider"
+              className="border border-amber-500/50 hover:border-amber-500 hover:bg-amber-500/10 text-amber-500 px-5 py-2 rounded-full text-xs font-medium transition-all duration-300 uppercase tracking-[0.2em]"
             >
               Book a Table
             </Link>
